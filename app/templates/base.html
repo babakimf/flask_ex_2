@@ -20,11 +20,10 @@
         {% include 'fragments/header.html' %}
         <!-- Section-->
                 
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% with messages = get_flashed_messages() %}
             {% if messages %}
-                <div class="flash-container">
-                {% for category, message in messages %}
-                    <div class="flash {{ category }}">
+                {% for message in messages %}
+                    <div>
                         {{ message }}
                     </div>
                 {% endfor %}
